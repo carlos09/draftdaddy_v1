@@ -1,0 +1,71 @@
+/**
+ * Main
+ */
+.mobile_menu_button .fa-bars {
+  color:#fbb040;
+}
+
+/**
+ * Login Form
+ */
+.swpm-remember-checkbox {
+  display: inline-block;
+  margin-right: 10px;
+}
+.swpm-rember-label {
+  display: inline-block;
+}
+
+.swpm-remember-me {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.swpm-rember-label {
+  color: rgba(11, 71, 111, 1);
+}
+
+#forgot_pass {
+  margin-left: 50px;
+  color: rgba(11, 71, 111, 1);
+}
+.swpm-login-form-submit {
+  background-color: #fbb040;
+  color: #fff;
+  border: 0;
+  padding: 10px 0;
+  width: 200px !important;
+  margin: 0 auto;
+  display: block;
+}
+/**
+ * Header
+ */
+header.centered_logo.centered_logo_animate .q_logo img,
+header:not(.centered_logo) .q_logo img {
+  padding-top:5px;
+}
+
+/**
+ * Picks Page
+ */
+.pick-set {
+ margin: 50px 0;
+}
+
+.date {
+ color: #fbb040;
+}
+
+ /**
+  * Restriction Page Styles
+  */
+.restriction-msg-agea {
+  text-align: center;
+  padding: 20px 0 100px;
+}
+
+.restriction-msg-agea a {
+  color: #fbb040;
+  text-decoration: underline;
+}
