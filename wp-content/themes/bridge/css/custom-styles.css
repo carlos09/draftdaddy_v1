@@ -35,6 +35,21 @@ div#dd-proof {
 }
 
 /**
+ * Contact Page
+ */
+#contact h2 {
+  text-transform: none;
+  margin-bottom: 25px;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea  {
+    border: 1px solid #ccc;
+    background-color: #efefef;
+}
+
+/**
  * Login Form
  */
 .swpm-remember-checkbox {
