@@ -24,7 +24,18 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url($qode_options_proya['favicon_image']); ?>">
 	<link rel="apple-touch-icon" href="<?php echo esc_url($qode_options_proya['favicon_image']); ?>"/>
-	<?php wp_head(); ?>
+	<?php wp_head();
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76243235-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -44,17 +55,17 @@
 
         $enable_popup_menu = "no";
         if (isset($qode_options_proya['enable_popup_menu'])){ if($qode_options_proya['enable_popup_menu'] == "yes" && has_nav_menu('popup-navigation')) { $enable_popup_menu = "yes"; }};
-		
+
 		$enable_fullscreen_search="no";
-		if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == "yes" && isset($qode_options_proya['search_type']) && $qode_options_proya['search_type'] == "fullscreen_search" ){ 
+		if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == "yes" && isset($qode_options_proya['search_type']) && $qode_options_proya['search_type'] == "fullscreen_search" ){
 			$enable_fullscreen_search="yes";
 		}
 
 		$fullscreen_search_animation="fade";
-		if(isset($qode_options_proya['search_type']) && $qode_options_proya['search_type'] == "fullscreen_search" && isset($qode_options_proya['search_animation']) && $qode_options_proya['search_animation'] !== "" ){ 
+		if(isset($qode_options_proya['search_type']) && $qode_options_proya['search_type'] == "fullscreen_search" && isset($qode_options_proya['search_animation']) && $qode_options_proya['search_animation'] !== "" ){
 			$fullscreen_search_animation = $qode_options_proya['search_animation'];
 		}
-		
+
 		$enable_vertical_menu = false;
 		if(isset($qode_options_proya['vertical_area']) && $qode_options_proya['vertical_area'] =='yes'){
 			$enable_vertical_menu = true;
@@ -276,7 +287,7 @@ $display_header_top = "yes";
 	if($is_header_transparent) {
         $header_classes .= ' transparent';
     }
-	
+
 	//is header transparent on scrolled window?
 	if(isset($qode_options_proya['header_bottom_appearance']) && $qode_options_proya['header_bottom_appearance'] !== 'regular' &&
         ((!in_array($qode_options_proya['header_background_transparency_sticky'], $transparent_values_array) && in_array($qode_options_proya['header_bottom_appearance'], $sticky_headers_array)) ||
@@ -318,7 +329,7 @@ $display_header_top = "yes";
     } else if(isset($qode_options_proya['enable_header_style_on_scroll']) && $qode_options_proya['enable_header_style_on_scroll'] == 'yes'){
         $header_classes .= ' header_style_on_scroll';
     }
-	
+
 	$logo_height = 0;
 	if(isset($qode_options_proya['logo_image'])){
 		if (!empty($qode_options_proya['logo_image'])) {
@@ -328,7 +339,7 @@ $display_header_top = "yes";
 			}
 		}
 	}
-	
+
 	$enable_search_left_sidearea_right = false;
 	if(isset($qode_options_proya['header_bottom_appearance']) && $qode_options_proya['header_bottom_appearance'] =='fixed_hiding'){
 		if(isset($qode_options_proya['search_left_sidearea_right']) && $qode_options_proya['search_left_sidearea_right'] =='yes'){
@@ -339,7 +350,7 @@ $display_header_top = "yes";
 			$enable_search_left_sidearea_right = true;
 		}
 	}
-	
+
 ?>
 	<?php if($enable_vertical_menu) { ?>
 		<?php
@@ -352,7 +363,7 @@ $display_header_top = "yes";
 						break;
 					case 'float':
 						$vertical_menu_style = "float";
-						break;					
+						break;
 					default:
 						$vertical_menu_style = "toggle";
 						break;
@@ -434,7 +445,7 @@ $display_header_top = "yes";
     <div class="header_inner clearfix">
 
 	<?php if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == "yes"){ ?>
-	
+
 		<?php if(($header_color_transparency_per_page == '' || $header_color_transparency_per_page == '1') && isset($qode_options_proya['search_type']) && $qode_options_proya['search_type'] == "search_slides_from_header_bottom"){ ?>
 			<form role="search" action="<?php echo esc_url(home_url('/')); ?>" class="qode_search_form_2" method="get">
 				<?php if($header_in_grid){ ?>
@@ -466,7 +477,7 @@ $display_header_top = "yes";
 					<?php } ?>
 							<div class="form_holder_outer">
 								<div class="form_holder">
-									
+
 									<input type="text" placeholder="<?php _e('Search', 'qode'); ?>" name="s" class="qode_search_field" autocomplete="off" />
 
 									<div class="qode_search_close">
@@ -504,7 +515,7 @@ $display_header_top = "yes";
 				<?php } ?>
 			</form>
 		<?php } ?>
-		
+
 	<?php } ?>
 	<div class="header_top_bottom_holder">
 	<?php if($display_header_top == "yes"){ ?>
@@ -636,7 +647,7 @@ $display_header_top = "yes";
 										dynamic_sidebar('woocommerce_dropdown');
 									} ?>
                                     <div class="side_menu_button">
-									
+
 										<?php if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == 'yes') {
 											$search_type_class = 'search_slides_from_window_top';
 											if(isset($qode_options_proya['search_type']) && $qode_options_proya['search_type'] !== '') {
@@ -651,7 +662,7 @@ $display_header_top = "yes";
 											<a class="search_button <?php echo esc_attr($search_type_class); ?> <?php echo esc_attr($header_button_size); ?>" href="javascript:void(0)">
                                                 <?php $qodeIconCollections->getSearchIcon(qodef_option_get_value('search_icon_pack')); ?>
 											</a>
-								
+
 											<?php if($search_type_class == 'fullscreen_search' && $fullscreen_search_animation=='from_circle'){ ?>
 												<div class="fullscreen_search_overlay"></div>
 											<?php } ?>
@@ -668,7 +679,7 @@ $display_header_top = "yes";
                                 </div>
 							</div>
 						<?php } ?>
-						
+
 						<?php if($centered_logo == true && $enable_search_left_sidearea_right == true ) { ?>
 							<div class="header_inner_right left_side">
 								<div class="side_menu_button_wrapper">
@@ -687,17 +698,17 @@ $display_header_top = "yes";
 											<a class="search_button <?php echo esc_attr($search_type_class); ?> <?php echo esc_attr($header_button_size); ?>" href="javascript:void(0)">
 												<?php $qodeIconCollections->getSearchIcon(qodef_option_get_value('search_icon_pack')); ?>
 											</a>
-								
+
 											<?php if($search_type_class == 'fullscreen_search' && $fullscreen_search_animation=='from_circle'){ ?>
 												<div class="fullscreen_search_overlay"></div>
 											<?php } ?>
 										<?php } ?>
-	
+
 									</div>
 								</div>
 							</div>
 						<?php } ?>
-						
+
 						<nav class="main_menu drop_down <?php if($menu_position == "" && $header_bottom_appearance != "stick menu_bottom"){ echo 'right';} ?>">
 						<?php
 
@@ -737,7 +748,7 @@ $display_header_top = "yes";
 											<a class="search_button <?php echo esc_attr($search_type_class); ?> <?php echo esc_attr($header_button_size); ?>" href="javascript:void(0)">
                                                 <?php $qodeIconCollections->getSearchIcon(qodef_option_get_value('search_icon_pack')); ?>
 											</a>
-								
+
 											<?php if($search_type_class == 'fullscreen_search' && $fullscreen_search_animation=='from_circle'){ ?>
 												<div class="fullscreen_search_overlay"></div>
 											<?php } ?>
@@ -802,7 +813,7 @@ $display_header_top = "yes";
 													<a class="search_button <?php echo esc_attr($search_type_class); ?> <?php echo esc_attr($header_button_size); ?>" href="javascript:void(0)">
                                                         <?php $qodeIconCollections->getSearchIcon(qodef_option_get_value('search_icon_pack')); ?>
 													</a>
-										
+
 													<?php if($search_type_class == 'fullscreen_search' && $fullscreen_search_animation=='from_circle'){ ?>
 														<div class="fullscreen_search_overlay"></div>
 													<?php } ?>
@@ -875,9 +886,9 @@ $display_header_top = "yes";
 
 </header>
 	<?php } else if($header_bottom_appearance == "fixed fixed_minimal"){ ?>
-	
+
 	<?php //FIXED MINIMAL Header Type ?>
-	
+
 	<header class="<?php echo $header_classes; ?> page_header">
 		<div class="header_inner clearfix">
 		<?php if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == "yes"){ ?>
@@ -911,7 +922,7 @@ $display_header_top = "yes";
 						<?php } ?>
 								<div class="form_holder_outer">
 									<div class="form_holder">
-										
+
 										<input type="text" placeholder="<?php _e('Search', 'qode'); ?>" name="s" class="qode_search_field" autocomplete="off" />
 
 										<div class="qode_search_close">
@@ -1023,7 +1034,7 @@ $display_header_top = "yes";
 										<?php if(is_active_sidebar('woocommerce_dropdown')) {
 											dynamic_sidebar('woocommerce_dropdown');
 										} ?>
-												
+
 										<div class="side_menu_button">
 											<?php if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == 'yes') {
 												$search_type_class = 'search_slides_from_window_top';
@@ -1039,7 +1050,7 @@ $display_header_top = "yes";
 												<a class="search_button <?php echo esc_attr($search_type_class); ?> <?php echo esc_attr($header_button_size); ?>" href="javascript:void(0)">
 													<?php $qodeIconCollections->getSearchIcon(qodef_option_get_value('search_icon_pack')); ?>
 												</a>
-									
+
 												<?php if($search_type_class == 'fullscreen_search' && $fullscreen_search_animation=='from_circle'){ ?>
 													<div class="fullscreen_search_overlay"></div>
 												<?php } ?>
@@ -1056,12 +1067,12 @@ $display_header_top = "yes";
 			</div>
 		</div>
 	</header>
-		
-	
+
+
 	<?php } else if($header_bottom_appearance == "fixed_top_header"){ ?>
-	
+
 	<?php //Fixed Header Top Header Type ?>
-	
+
 	<header class="<?php echo $header_classes; ?> page_header">
 		<div class="header_inner clearfix">
 		<?php if(isset($qode_options_proya['enable_search']) && $qode_options_proya['enable_search'] == "yes"){ ?>
@@ -1100,7 +1111,7 @@ $display_header_top = "yes";
 									<div class="inner">
 										<nav class="main_menu drop_down right">
 										<?php
-											wp_nav_menu( array( 
+											wp_nav_menu( array(
 												'theme_location' => 'top-navigation' ,
 												'container'  => '',
 												'container_class' => '',
@@ -1152,7 +1163,7 @@ $display_header_top = "yes";
 								</div>
 								<nav class="mobile_menu">
 									<?php
-										wp_nav_menu( array( 
+										wp_nav_menu( array(
 											'theme_location' => 'top-navigation' ,
 											'container'  => '',
 											'container_class' => '',
@@ -1202,8 +1213,8 @@ $display_header_top = "yes";
 							<?php
 								dynamic_sidebar('header_bottom_center');
 							?>
-						</div>	
-								
+						</div>
+
 						<?php if($header_in_grid){ ?>
 						<?php if($qode_options_proya['overlapping_content'] == 'yes') {?></div><?php } ?>
 								</div>
@@ -1214,7 +1225,7 @@ $display_header_top = "yes";
 		</div>
 	</header>
 	<?php } ?>
-	
+
 <?php } else{?>
 	<header class="page_header <?php if($display_header_top == "yes"){ echo 'has_top'; }  if($header_top_area_scroll == "yes"){ echo ' scroll_top'; }?> <?php if($centered_logo){ echo " centered_logo"; } ?> <?php echo $header_bottom_appearance; ?>  <?php echo $header_style; ?> <?php if(is_active_sidebar('header_fixed_right')) { echo 'has_header_fixed_right'; } ?>">
         <div class="header_inner clearfix">
@@ -1346,7 +1357,7 @@ $display_header_top = "yes";
                                 <a class="qode_search_submit search_submit" href="javascript:void(0)">
                                     <?php $qodeIconCollections->getSearchIcon(qodef_option_get_value('search_icon_pack')); ?>
                                 </a>
-							</div>	
+							</div>
 						</form>
 					</div>
 				</div>
@@ -1382,8 +1393,8 @@ $display_header_top = "yes";
 			}
 		}
 	?>
-	
-	
+
+
     <?php
     if(isset($qode_options_proya['paspartu']) && $qode_options_proya['paspartu'] == 'yes'){
 
