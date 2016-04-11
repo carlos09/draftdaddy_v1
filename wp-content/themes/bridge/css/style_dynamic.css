@@ -361,6 +361,12 @@ nav.main_menu ul li:hover a {
 }
 
 
+	.footer_top_holder,	footer #lang_sel > ul > li > a,	footer #lang_sel_click > ul > li > a{
+		background-color: #1c282f;
+	}
+	footer #lang_sel ul ul a,footer #lang_sel_click ul ul a,footer #lang_sel ul ul a:visited,footer #lang_sel_click ul ul a:visited{
+		background-color: #1c282f !important;
+	}
 
 
 
@@ -373,6 +379,11 @@ nav.main_menu ul li:hover a {
 
 
 
+	.footer_top .footer_col1,
+	.footer_top .container_inner > .widget,
+	.footer_top.footer_top_full > .widget{
+		text-align: center;
+	}
 
 
 

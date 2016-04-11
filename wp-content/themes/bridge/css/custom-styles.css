@@ -5,6 +5,35 @@
   color:#fbb040;
 }
 
+.full_width {
+  padding: 60px 0 80px;
+}
+
+#inquire {
+  padding: 25px 0;
+  color: #fff;
+  margin: 40px 0;
+}
+
+#inquire h2 {
+  color: #fff;
+  text-align: center;
+  text-transform: none;
+}
+
+div#dd-proof {
+    margin: 80px 0;
+}
+
+#dd-proof h4 {
+  font-size: 26px;
+}
+
+#dd-proof i.fa.fa-bar-chart {
+  font-size: 140px;
+  margin-top: 25px;
+}
+
 /**
  * Login Form
  */
